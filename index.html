@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentes que Inspiram — Vanessa Sanceverino Esteves</title>
+    
+    <!-- SEO & Meta -->
+    <meta name="description" content="Mentes que Inspiram - Um programa de entrevistas focado em educação, inclusão e desenvolvimento humano com Vanessa Sanceverino Esteves.">
+    
+    <!-- Fonts: Inter for Sans, Playfair for Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="style.css?v=2">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="main.js?v=2" defer></script>
+    
+    <script>
+        // Failsafe Preloader Removal
+        function hidePreloader() {
+            const p = document.querySelector('.preloader');
+            if (p && !p.classList.contains('preloader--hidden')) {
+                console.log("Failsafe: Hiding preloader");
+                p.classList.add('preloader--hidden');
+                setTimeout(() => p.style.display = 'none', 1200);
+            }
+        }
+        window.addEventListener('load', () => setTimeout(hidePreloader, 1000));
+        setTimeout(hidePreloader, 4000); // Absolute fallback
+    </script>
+</head>
+<body data-scroll-container>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__inner">
+            <div class="preloader__text">
+                <span class="preloader__word">Mentes</span>
+                <span class="preloader__word">Que</span>
+                <span class="preloader__word">Inspiram</span>
+            </div>
+            <div class="preloader__bar-container">
+                <div class="preloader__bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Overlay (Dulcedo Style) -->
+    <nav class="nav-overlay">
+        <div class="nav-overlay__bg"></div>
+        <div class="nav-overlay__content">
+            <div class="nav-overlay__close"><i data-lucide="x"></i></div>
+            <div class="nav-overlay__links">
+                <a href="#hero" class="nav-link" data-index="01">Início</a>
+                <a href="#about" class="nav-link" data-index="02">Sobre</a>
+                <a href="#episodes" class="nav-link" data-index="03">Episódios</a>
+                <a href="#pillars" class="nav-link" data-index="04">Pilares</a>
+                <a href="#blog" class="nav-link" data-index="05">Blog</a>
+                <a href="#performance" class="nav-link" data-index="06">Performance</a>
+                <a href="#sponsors" class="nav-link" data-index="07">Parceiros</a>
+                <a href="#gallery" class="nav-link" data-index="08">Universo</a>
+                <a href="#contact" class="nav-link" data-index="09">Contato</a>
+            </div>
+            <div class="nav-overlay__footer">
+                <div class="nav-overlay__social">
+                    <a href="https://instagram.com/mentesqueinspiramoficial" target="_blank">Instagram</a>
+                    <a href="https://youtube.com/@ProgramaMentesqueinspiram" target="_blank">YouTube</a>
+                </div>
+                <div class="nav-overlay__copy">© 2026 Mentes que Inspiram</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__logo" data-scroll data-scroll-speed="1">
+            <span class="logo-text">MENTES QUE <span class="italic gold">INSPIRAM</span></span>
+        </div>
+        <div class="header__menu-toggle">
+            <div class="menu-text">Menu</div>
+            <div class="menu-icon"><span></span><span></span></div>
+        </div>
+    </header>
+
+    <!-- Main Scroll Content -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="hero" data-scroll-section>
+            <div class="hero__bg" data-scroll data-scroll-speed="-3">
+                <img src="img/mentes5.jpeg" alt="Vanessa Sanceverino Esteves">
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__inner container">
+                <div class="hero__label" data-scroll data-scroll-speed="1">Vanessa Sanceverino Esteves apresenta</div>
+                <h1 class="hero__title">
+                    <span class="hero__line"><span data-scroll data-scroll-speed="1">Essência Que</span></span>
+                    <span class="hero__line"><span class="italic gold" data-scroll data-scroll-speed="2">Transforma</span></span>
+                </h1>
+                <div class="hero__footer">
+                    <div class="hero__scroll-indicator">
+                        <span class="scroll-text">Scroll para explorar</span>
+                        <div class="scroll-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manifesto / About Section -->
+        <section id="about" class="about" data-scroll-section>
+            <div class="container about__inner">
+                <div class="about__label">Manifesto</div>
+                <h2 class="about__text" data-scroll data-scroll-speed="1">
+                    O Mentes que Inspiram nasce da força das ideias, da escuta e das histórias que <span class="italic gold">ampliam o olhar</span> sobre o mundo. É um espaço onde conhecimento encontra sensibilidade.
+                </h2>
+                <div class="about__host" data-scroll data-scroll-class="revealed" data-scroll-offset="10%">
+                    <div class="host__img reveal-img" data-scroll data-scroll-speed="1">
+                        <img src="img/mentes10.jpeg" alt="Vanessa Sanceverino">
+                    </div>
+                    <div class="host__content">
+                        <h3 class="host__name">Vanessa Sanceverino</h3>
+                        <p class="host__role">Gestora, comunicadora e idealizadora</p>
+                        <p class="host__desc">Conduz entrevistas que unem profundidade, sensibilidade e relevância social. Sua presença traduz a essência do projeto: escutar com inteligência e comunicar com elegância.</p>
+                        <div class="host__actions">
+                            <a href="#episodes" class="btn btn--gold">Assista aos Episódios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Episodes Section -->
+        <section id="episodes" class="timeline" data-scroll-section>
+            <div class="container">
+                <div class="section-header" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
+                    <span class="section-num">03 /</span>
+                    <h2 class="section-title reveal-text"><span>Assista aos Episódios</span></h2>
+                </div>
+            </div>
+            <div class="timeline__scroll-container">
+                <div class="timeline__track timeline__track--episodes" data-scroll data-scroll-direction="horizontal" data-scroll-speed="6" data-scroll-target="#episodes">
+                    <!-- Episodes injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars Section (Adapted Talent Grid) -->
+        <section id="pillars" class="pillars" data-scroll-section>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-num">04 /</span>
+                    <h2 class="section-title">Eixos de Atuação</h2>
+                </div>
+                <div class="pillars__grid">
+                    <!-- Pillar 1 -->
+                    <div class="pillar-card" data-scroll data-scroll-speed="0.5" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card__img">
+                            <img src="img/mentes1.jpeg" alt="Educação">
+                        </div>
+                        <div class="pillar-card__content">
+                            <h4 class="pillar-card__title">Educação & Inovação</h4>
+                            <p class="pillar-card__desc">Reflexões sobre aprendizagem e o futuro da educação.</p>
+                        </div>
+                    </div>
+                    <!-- Pillar 2 -->
+                    <div class="pillar-card" data-scroll data-scroll-speed="1.2" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card__img">
+                            <img src="img/mentes2.jpeg" alt="Inclusão">
+                        </div>
+                        <div class="pillar-card__content">
+                            <h4 class="pillar-card__title">Inclusão & Diversidade</h4>
+                            <p class="pillar-card__desc">Pautas sobre acessibilidade e pertencimento.</p>
+                        </div>
+                    </div>
+                    <!-- Pillar 3 -->
+                    <div class="pillar-card" data-scroll data-scroll-speed="0.8" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card__img">
+                            <img src="img/mentes11.jpeg" alt="Desenvolvimento">
+                        </div>
+                        <div class="pillar-card__content">
+                            <h4 class="pillar-card__title">Desenvolvimento Humano</h4>
+                            <p class="pillar-card__desc">Comportamento, saúde emocional e propósito.</p>
+                        </div>
+                    </div>
+                    <!-- Pillar 4 -->
+                    <div class="pillar-card" data-scroll data-scroll-speed="1" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card__img">
+                            <img src="img/mentes9.jpeg" alt="Liderança">
+                        </div>
+                        <div class="pillar-card__content">
+                            <h4 class="pillar-card__title">Liderança & Inspiração</h4>
+                            <p class="pillar-card__desc">Trajetórias que mobilizam e inspiram transformação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Spotify CTA Block -->
+        <section class="spotify-cta" data-scroll-section>
+            <div class="container">
+                <div class="spotify-cta__inner" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
+                     <p class="spotify-cta__label">Acompanhe o Programa</p>
+                     <h2 class="spotify-cta__title">Conversas profundas sobre liderança, inovação educacional, e desenvolvimento humano. Tudo em um só lugar.</h2>
+                     <a href="#" class="btn btn--outline mt-4">Ouvir Episódios no Spotify</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog" data-scroll-section>
+            <div class="container">
+                <div class="section-header" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
+                    <span class="section-num">05 /</span>
+                    <h2 class="section-title reveal-text"><span>Insights & Reflexões</span></h2>
+                </div>
+                <div class="blog__grid">
+                    <div class="blog__card" data-scroll data-scroll-class="revealed" data-scroll-offset="10%">
+                        <div class="blog__img reveal-img"><img src="img/mentes2.jpeg" alt=""></div>
+                        <div class="blog__content">
+                            <span class="blog__date">24 Mar 2026</span>
+                            <h3 class="blog__title">O futuro da liderança corporativa na era 5.0</h3>
+                            <a href="#" class="blog__link">Ler Artigo</a>
+                        </div>
+                    </div>
+                    <div class="blog__card" data-scroll data-scroll-class="revealed" data-scroll-offset="10%">
+                        <div class="blog__img reveal-img"><img src="img/mentes7.jpeg" alt=""></div>
+                        <div class="blog__content">
+                            <span class="blog__date">18 Mar 2026</span>
+                            <h3 class="blog__title">Como a inclusão transforma a educação</h3>
+                            <a href="#" class="blog__link">Ler Artigo</a>
+                        </div>
+                    </div>
+                    <div class="blog__card" data-scroll data-scroll-class="revealed" data-scroll-offset="10%">
+                        <div class="blog__img reveal-img"><img src="img/mentes11.jpeg" alt=""></div>
+                        <div class="blog__content">
+                            <span class="blog__date">10 Mar 2026</span>
+                            <h3 class="blog__title">Gestão emocional para alta performance</h3>
+                            <a href="#" class="blog__link">Ler Artigo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Section -->
+        <section id="sponsors" class="sponsors" data-scroll-section>
+            <div class="container container--center" data-scroll data-scroll-class="revealed" data-scroll-offset="10%">
+                <div class="sponsors__grid">
+                    <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"></div>
+                    <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"></div>
+                    <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" alt="TCS"></div>
+                    <div class="sponsor"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Stats (Marquee) -->
+        <section id="performance" class="performance" data-scroll-section>
+            <div class="container">
+                <div class="performance__label">Alcance Global</div>
+            </div>
+            <div class="performance__marquee-wrapper">
+                <div class="performance__marquee animate-marquee">
+                    <div class="stat">
+                        <span class="stat__num">+2.1M</span>
+                        <span class="stat__label">Views no Instagram</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">5M</span>
+                        <span class="stat__label">Audiência RS Play</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">876K</span>
+                        <span class="stat__label">Impacto Digital</span>
+                    </div>
+                    <!-- Duplicate for infinite loop -->
+                    <div class="stat">
+                        <span class="stat__num">+2.1M</span>
+                        <span class="stat__label">Views no Instagram</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">5M</span>
+                        <span class="stat__label">Audiência RS Play</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">876K</span>
+                        <span class="stat__label">Impacto Digital</span>
+                    </div>
+                    <!-- Duplicate for infinite loop -->
+                    <div class="stat">
+                        <span class="stat__num">+2.1M</span>
+                        <span class="stat__label">Views no Instagram</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">5M</span>
+                        <span class="stat__label">Audiência RS Play</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">876K</span>
+                        <span class="stat__label">Impacto Digital</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery / Universe (Marquee) -->
+        <section id="gallery" class="gallery" data-scroll-section>
+            <div class="container pt-gallery">
+                <div class="section-header" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
+                    <span class="section-num">07 /</span>
+                    <h2 class="section-title reveal-text"><span>Bastidores & Momentos</span></h2>
+                </div>
+            </div>
+            <div class="gallery__marquee" data-scroll data-scroll-direction="horizontal" data-scroll-speed="10" data-scroll-target="#gallery">
+                <div class="gallery__item"><img src="img/mentes1.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes2.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes3.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes4.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes6.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes7.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes8.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes12.jpeg" alt=""></div>
+                <div class="gallery__item"><img src="img/mentes13.jpeg" alt=""></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" data-scroll-section>
+            <div class="container contact__inner">
+                <div class="contact__content">
+                    <h2 class="contact__title reveal-text" data-scroll data-scroll-speed="1" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <span>Vamos <span class="italic gold">Conversar?</span></span>
+                    </h2>
+                    <p class="contact__desc" data-scroll data-scroll-speed="0.5">Sua marca conectada a um conteúdo que inspira, informa e deixa legado.</p>
+                    <div class="contact__links">
+                        <a href="https://instagram.com/vanessasanceverino" target="_blank" class="contact-link">
+                            <i data-lucide="instagram"></i> <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/5511999999999" target="_blank" class="contact-link">
+                            <i data-lucide="message-circle"></i> <span>WhatsApp</span>
+                        </a>
+                        <a href="mailto:contato@mentesqueinspiram.com.br" class="contact-link">
+                            <i data-lucide="mail"></i> <span>E-mail</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact__form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nome" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Como podemos inspirar juntos?" class="form-input" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--gold">Enviar Proposta</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" data-scroll-section>
+            <div class="container footer__inner">
+                <div class="footer__logo">MENTES QUE <span class="gold">INSPIRAM</span></div>
+                <div class="footer__info">
+                    <span>Vanessa Sanceverino Esteves</span>
+                    <span>© 2026 Mentes Que Inspiram</span>
+                    <span class="rs-play">Parceria RS Play</span>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Grain / Noise Overlay -->
+    <div class="noise"></div>
+
+</body>
+</html>
