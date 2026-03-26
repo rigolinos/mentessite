@@ -38,7 +38,7 @@
         setTimeout(hidePreloader, 4000); // Absolute fallback
     </script>
 </head>
-<body data-scroll-container>
+<body>
 
     <!-- Preloader -->
     <div class="preloader">
@@ -92,7 +92,7 @@
     </header>
 
     <!-- Main Scroll Content -->
-    <main class="main-content">
+    <main class="main-content" data-scroll-container>
         
         <!-- Hero Section -->
         <section id="hero" class="hero" data-scroll-section>
@@ -101,10 +101,12 @@
                 <div class="hero__overlay"></div>
             </div>
             <div class="hero__inner container">
-                <div class="hero__label" data-scroll data-scroll-speed="1">Vanessa Sanceverino Esteves apresenta</div>
+                <div data-scroll data-scroll-speed="1">
+                    <div class="hero__label">Vanessa Sanceverino Esteves apresenta</div>
+                </div>
                 <h1 class="hero__title">
-                    <span class="hero__line"><span data-scroll data-scroll-speed="1">Essência Que</span></span>
-                    <span class="hero__line"><span class="italic gold" data-scroll data-scroll-speed="2">Transforma</span></span>
+                    <div data-scroll data-scroll-speed="1"><span class="hero__line"><span>Essência Que</span></span></div>
+                    <div data-scroll data-scroll-speed="2"><span class="hero__line"><span class="italic gold">Transforma</span></span></div>
                 </h1>
                 <div class="hero__footer">
                     <div class="hero__scroll-indicator">
@@ -119,9 +121,11 @@
         <section id="about" class="about" data-scroll-section>
             <div class="container about__inner">
                 <div class="about__label">Manifesto</div>
-                <h2 class="about__text" data-scroll data-scroll-speed="1">
-                    O Mentes que Inspiram nasce da força das ideias, da escuta e das histórias que <span class="italic gold">ampliam o olhar</span> sobre o mundo. É um espaço onde conhecimento encontra sensibilidade.
-                </h2>
+                <div data-scroll data-scroll-speed="1">
+                    <h2 class="about__text">
+                        O Mentes que Inspiram nasce da força das ideias, da escuta e das histórias que <span class="italic gold">ampliam o olhar</span> sobre o mundo. É um espaço onde conhecimento encontra sensibilidade.
+                    </h2>
+                </div>
                 <div class="about__host" data-scroll data-scroll-class="revealed" data-scroll-offset="10%">
                     <div class="host__img reveal-img" data-scroll data-scroll-speed="1">
                         <img src="img/mentes10.jpeg" alt="Vanessa Sanceverino">
@@ -143,7 +147,7 @@
         <!-- Episodes Section -->
         <section id="episodes" class="timeline" data-scroll-section>
             <div class="container">
-                <div class="section-header" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
+                <div class="section-header">
                     <span class="section-num">03 /</span>
                     <h2 class="section-title reveal-text"><span>Assista aos Episódios</span></h2>
                 </div>
@@ -164,43 +168,51 @@
                 </div>
                 <div class="pillars__grid">
                     <!-- Pillar 1 -->
-                    <div class="pillar-card" data-scroll data-scroll-speed="0.5" data-scroll-class="revealed" data-scroll-offset="20%">
-                        <div class="pillar-card__img">
-                            <img src="img/mentes1.jpeg" alt="Educação">
-                        </div>
-                        <div class="pillar-card__content">
-                            <h4 class="pillar-card__title">Educação & Inovação</h4>
-                            <p class="pillar-card__desc">Reflexões sobre aprendizagem e o futuro da educação.</p>
+                    <div data-scroll data-scroll-speed="0.5" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card">
+                            <div class="pillar-card__img">
+                                <img src="img/mentes1.jpeg" alt="Educação">
+                            </div>
+                            <div class="pillar-card__content">
+                                <h4 class="pillar-card__title">Educação & Inovação</h4>
+                                <p class="pillar-card__desc">Reflexões sobre aprendizagem e o futuro da educação.</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Pillar 2 -->
-                    <div class="pillar-card" data-scroll data-scroll-speed="1.2" data-scroll-class="revealed" data-scroll-offset="20%">
-                        <div class="pillar-card__img">
-                            <img src="img/mentes2.jpeg" alt="Inclusão">
-                        </div>
-                        <div class="pillar-card__content">
-                            <h4 class="pillar-card__title">Inclusão & Diversidade</h4>
-                            <p class="pillar-card__desc">Pautas sobre acessibilidade e pertencimento.</p>
+                    <div data-scroll data-scroll-speed="1.2" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card">
+                            <div class="pillar-card__img">
+                                <img src="img/mentes2.jpeg" alt="Inclusão">
+                            </div>
+                            <div class="pillar-card__content">
+                                <h4 class="pillar-card__title">Inclusão & Diversidade</h4>
+                                <p class="pillar-card__desc">Pautas sobre acessibilidade e pertencimento.</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Pillar 3 -->
-                    <div class="pillar-card" data-scroll data-scroll-speed="0.8" data-scroll-class="revealed" data-scroll-offset="20%">
-                        <div class="pillar-card__img">
-                            <img src="img/mentes11.jpeg" alt="Desenvolvimento">
-                        </div>
-                        <div class="pillar-card__content">
-                            <h4 class="pillar-card__title">Desenvolvimento Humano</h4>
-                            <p class="pillar-card__desc">Comportamento, saúde emocional e propósito.</p>
+                    <div data-scroll data-scroll-speed="0.8" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card">
+                            <div class="pillar-card__img">
+                                <img src="img/mentes11.jpeg" alt="Desenvolvimento">
+                            </div>
+                            <div class="pillar-card__content">
+                                <h4 class="pillar-card__title">Desenvolvimento Humano</h4>
+                                <p class="pillar-card__desc">Comportamento, saúde emocional e propósito.</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Pillar 4 -->
-                    <div class="pillar-card" data-scroll data-scroll-speed="1" data-scroll-class="revealed" data-scroll-offset="20%">
-                        <div class="pillar-card__img">
-                            <img src="img/mentes9.jpeg" alt="Liderança">
-                        </div>
-                        <div class="pillar-card__content">
-                            <h4 class="pillar-card__title">Liderança & Inspiração</h4>
-                            <p class="pillar-card__desc">Trajetórias que mobilizam e inspiram transformação.</p>
+                    <div data-scroll data-scroll-speed="1" data-scroll-class="revealed" data-scroll-offset="20%">
+                        <div class="pillar-card">
+                            <div class="pillar-card__img">
+                                <img src="img/mentes9.jpeg" alt="Liderança">
+                            </div>
+                            <div class="pillar-card__content">
+                                <h4 class="pillar-card__title">Liderança & Inspiração</h4>
+                                <p class="pillar-card__desc">Trajetórias que mobilizam e inspiram transformação.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,7 +235,7 @@
         <!-- Blog Section -->
         <section id="blog" class="blog" data-scroll-section>
             <div class="container">
-                <div class="section-header" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
+                <div class="section-header">
                     <span class="section-num">05 /</span>
                     <h2 class="section-title reveal-text"><span>Insights & Reflexões</span></h2>
                 </div>
@@ -320,12 +332,12 @@
         <!-- Gallery / Universe (Marquee) -->
         <section id="gallery" class="gallery" data-scroll-section>
             <div class="container pt-gallery">
-                <div class="section-header" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
+                <div class="section-header">
                     <span class="section-num">07 /</span>
                     <h2 class="section-title reveal-text"><span>Bastidores & Momentos</span></h2>
                 </div>
             </div>
-            <div class="gallery__marquee" data-scroll data-scroll-direction="horizontal" data-scroll-speed="10" data-scroll-target="#gallery">
+            <div class="gallery__marquee">
                 <div class="gallery__item"><img src="img/mentes1.jpeg" alt=""></div>
                 <div class="gallery__item"><img src="img/mentes2.jpeg" alt=""></div>
                 <div class="gallery__item"><img src="img/mentes3.jpeg" alt=""></div>
@@ -342,10 +354,10 @@
         <section id="contact" class="contact" data-scroll-section>
             <div class="container contact__inner">
                 <div class="contact__content">
-                    <h2 class="contact__title reveal-text" data-scroll data-scroll-speed="1" data-scroll-class="revealed" data-scroll-offset="20%">
+                    <h2 class="contact__title reveal-text" data-scroll data-scroll-class="revealed" data-scroll-offset="20%">
                         <span>Vamos <span class="italic gold">Conversar?</span></span>
                     </h2>
-                    <p class="contact__desc" data-scroll data-scroll-speed="0.5">Sua marca conectada a um conteúdo que inspira, informa e deixa legado.</p>
+                    <p class="contact__desc" data-scroll>Sua marca conectada a um conteúdo que inspira, informa e deixa legado.</p>
                     <div class="contact__links">
                         <a href="https://instagram.com/vanessasanceverino" target="_blank" class="contact-link">
                             <i data-lucide="instagram"></i> <span>Instagram</span>

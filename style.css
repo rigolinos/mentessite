@@ -447,14 +447,6 @@ h1, h2, h3, h4, .logo-text, .nav-link {
     align-items: baseline;
     gap: 2rem;
     margin-bottom: 8vh;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.8s var(--transition);
-}
-
-.section-header.revealed {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .section-num {
@@ -589,6 +581,7 @@ h1, h2, h3, h4, .logo-text, .nav-link {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10vw;
+    align-items: center;
 }
 
 .contact__title {
