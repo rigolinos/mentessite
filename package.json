@@ -4,7 +4,8 @@
   "description": "Vanessa Sanceverino Esteves - Mentes que Inspiram",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "dev": "npx serve ."
   },
   "keywords": [],
   "author": "",
