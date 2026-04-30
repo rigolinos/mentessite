@@ -672,8 +672,49 @@ h1, h2, h3, h4, .logo-text, .nav-link {
 }
 
 
+/* Mobile Touch Hint */
+.pillar-card__touch-hint {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--white);
+    background: rgba(212, 175, 55, 0.2); /* Gold tinted background */
+    border: 1px solid rgba(212, 175, 55, 0.5); /* Subtle gold border */
+    backdrop-filter: blur(5px);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: none; /* Hidden by default (desktop) */
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none; /* Allow clicks to pass through */
+    animation: pulse-touch 2s infinite ease-in-out;
+}
 
+.pillar-card__touch-hint i {
+    width: 20px;
+    height: 20px;
+}
 
+@keyframes pulse-touch {
+    0% { transform: scale(1); opacity: 0.7; box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    100% { transform: scale(1); opacity: 0.7; box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+@media (max-width: 768px) {
+    .pillar-card__touch-hint {
+        display: flex; /* Show only on mobile */
+    }
+    
+    /* Hide hint when card is active (touched) */
+    .pillar-card:active .pillar-card__touch-hint,
+    .pillar-card:hover .pillar-card__touch-hint {
+        opacity: 0;
+        animation: none;
+    }
+}
 
 /* Sponsors */
 .sponsors { padding: 8vh 0; background: var(--bg-dark); }
