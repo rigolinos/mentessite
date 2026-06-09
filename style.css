@@ -837,13 +837,13 @@ h1, h2, h3, h4, .logo-text, .nav-link {
 /* Sponsors */
 .sponsors { padding: 8vh 0; background: var(--bg-dark); }
 .sponsors__grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4vw; }
-.sponsor img { height: 40px; opacity: 0.5; filter: invert(1) grayscale(1); transition: 0.4s; }
+.sponsor img { height: 40px; opacity: 0.6; transition: 0.4s; }
 .sponsor:hover img { opacity: 1; }
 
 /* Performance Marquee */
 .performance { padding: 8vh 0; overflow: hidden; }
 .performance__label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.4em; color: var(--gold); margin-bottom: 3rem; text-align: center; }
-.performance__marquee-wrapper { display: flex; overflow: hidden; white-space: nowrap; position: relative; padding: 3rem 0; border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); background: linear-gradient(90deg, var(--bg-dark) 0%, transparent 15%, transparent 85%, var(--bg-dark) 100%); width: 100%; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); }
+.performance__marquee-wrapper { display: flex; overflow: hidden; white-space: nowrap; position: relative; padding: 3rem 0; border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); background: linear-gradient(90deg, var(--bg-dark) 0%, transparent 15%, transparent 85%, var(--bg-dark) 100%); width: 100%; }
 .performance__marquee { display: flex; align-items: center; }
 .animate-marquee { animation: marqueeScroll 25s linear infinite; }
 @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-33.33333%); } }
@@ -1430,17 +1430,14 @@ h1, h2, h3, h4, .logo-text, .nav-link {
     100% { transform: translateX(-50%); }
 }
 
-/* Sponsors Override & Split Partners Layout */
+/* Sponsors Override & Partners Layout */
 .sponsors { padding: 8vh 0; background: var(--bg-dark); }
-.sponsors__split-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 5rem;
-    align-items: start;
-}
+
 .public-profile {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5rem;
+    max-width: 680px;
 }
 .public-profile__title {
     font-family: var(--font-title);
@@ -1484,6 +1481,7 @@ h1, h2, h3, h4, .logo-text, .nav-link {
     font-size: 1.02rem;
     line-height: 1.5;
 }
+
 .sponsors-logos {
     display: flex;
     flex-direction: column;
@@ -1496,45 +1494,75 @@ h1, h2, h3, h4, .logo-text, .nav-link {
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
-.sponsors__split-grid .sponsors__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    width: 100%;
-}
-.sponsors__split-grid .sponsor {
-    background: rgba(11, 19, 43, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 2rem 1.5rem;
+
+/* Partners grid: horizontal row, each card at natural image proportions */
+.sponsors__grid {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 110px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.sponsor {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
     transition: all 0.4s var(--transition);
+    flex-shrink: 0;
 }
-.sponsors__split-grid .sponsor img {
-    opacity: 0.7 !important;
-    filter: invert(1) grayscale(1) brightness(0.8) !important;
-    max-height: 35px;
-    transition: all 0.4s var(--transition);
+
+/* Each card sized to its own natural image dimensions */
+.sponsor--brucki {
+    /* Brucki logo is ~square */
+    width: 200px;
 }
-.sponsors__split-grid .sponsor:hover {
-    background: rgba(224, 179, 86, 0.05);
-    border-color: rgba(224, 179, 86, 0.2);
-    transform: translateY(-4px);
+.sponsor--akoma {
+    /* Akoma logo is landscape ~4:3 */
+    width: 280px;
 }
-.sponsors__split-grid .sponsor:hover img {
-    opacity: 1 !important;
-    filter: invert(1) grayscale(0) brightness(1) !important;
+.sponsor--lifecon {
+    /* Lifecon logo is wide ~3:1 */
+    width: 360px;
+}
+
+.sponsor img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s var(--transition);
+}
+
+.sponsor:hover {
+    border-color: rgba(224, 179, 86, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+.sponsor:hover img {
+    transform: scale(1.03);
 }
 
 @media (max-width: 991px) {
-    .sponsors__split-grid {
-        grid-template-columns: 1fr;
-        gap: 4rem;
+    .sponsors__grid {
+        gap: 1.5rem;
+    }
+    .sponsor--brucki { width: 160px; }
+    .sponsor--akoma  { width: 220px; }
+    .sponsor--lifecon { width: 280px; }
+}
+
+@media (max-width: 600px) {
+    .sponsors__grid {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .sponsor--brucki,
+    .sponsor--akoma,
+    .sponsor--lifecon {
+        width: 100%;
     }
 }
+
 
 /* Oportunidades para Marcas */
 .commercial { padding: 8vh 0; background: #03060C; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -1820,8 +1848,10 @@ h1, h2, h3, h4, .logo-text, .nav-link {
 
 .perf-dashboard__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .perf-card {
